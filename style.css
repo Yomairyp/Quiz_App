@@ -50,4 +50,10 @@ button{
 
 .btn0:focus, .btn1:focus, .btn2:focus, .btn3:focus{
     outline: 0;
-    }
+}
+
+#progress{
+        color:darkgray;
+        font:18px;
+}
+    
