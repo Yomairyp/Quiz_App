@@ -42,3 +42,8 @@ button{
     padding: 10px 10px;
 
 }
+
+.btn0:hover, .btn1:hover, .btn2:hover, .btn3:hover{
+    cursor: pointer;
+    background-color:rgb(87, 86, 86);
+}
