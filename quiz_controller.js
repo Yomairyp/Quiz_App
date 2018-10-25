@@ -6,10 +6,18 @@ function Quiz (question){
 
 
 Quiz.prototype.getQuestionIndex = function (){
-    return this.question[this.questionIndex]
+    return this.questions[this.questionIndex];
 
 };
 
 Quiz.prototype.isEnded = function(){
-    return this.length === this.questionIndex
-}
+    return this.questions.length === this.questionIndex;
+};
+
+Quiz.prototype.guess = function (answer){
+    this.questions++;
+    if(this.questionIndex.correctAnswer(answer))
+    {
+        this.score++;
+    };
+};
