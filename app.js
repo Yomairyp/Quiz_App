@@ -1,6 +1,6 @@
 function populate () {
     if(quiz.isEnded()){
-        // show score ()
+        showScore ()
     } else {
         //   show question
       let element = document.getElementById("question");
@@ -15,8 +15,16 @@ function populate () {
     }
     
       
-    }
+    };
+
 };
+
+function showScore(){
+    let testOverHTML = "<h1>Results</h1>";
+    testOverHTML += "<h2 id='score'>Your Score: " + quiz.score + "</h2>";
+    let element = document.getElementById("quiz");
+    element.innerHTML = testOverHTML;
+}
 
 let questions = [
     new Question ("What does MVC stand for?",["Mobile-Version-Connect", "Model-Version-Control","Model-View-Controler", "Mobile-View-Connection"],"Model-View-Control"),
