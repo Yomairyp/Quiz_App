@@ -11,17 +11,17 @@ function populate () {
       for( let i = 0; i < choices.length; i++) { 
           let element = document.getElementById("choice" + i);
           element.innerHTML = choices[i];
-         guess("btn" + [i], choices + [i])
+         guess(i, choices)
     }
       showProgress()
     }
 
 };
 
-function guess(id,guess){
-    let button = document.getElementById(id);
+function guess(id, choices){
+    let button = document.getElementById("btn" +id);
     button.onclick = function (){
-        quiz.guess(guess);
+        quiz.guess(choices[id]);
         populate();
     }
 
@@ -43,7 +43,7 @@ function showScore(){
 }
 
 let questions = [
-    new Question ("What does MVC stand for?",["Mobile-Version-Connect", "Model-Version-Control","Model-View-Controller", "Mobile-View-Connection"],"Model-View-Control"),
+    new Question ("What does MVC stand for?",["Mobile-Version-Connect", "Model-Version-Control","Model-View-Controller", "Mobile-View-Connection"],"Model-View-Controller"),
     new Question ("What is the does HTML stand for?",["Hypertext Markup Language", "Hyper Language", "Mark up Language"],"Hypertext Markup Language"),
     new Question ("Whats language is used for web apps?",["Java", "javaScript", "PHP", "All"], "All"),
     new Question ("What language is used to style a page?",["HTML","CSS", "Java","Ruby"],"CSS")
